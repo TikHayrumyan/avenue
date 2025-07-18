@@ -1,0 +1,28 @@
+:root {
+    --font-heading-cormorant: var(--font-cormorant);
+    --font-body-rosarivo: var(--font-rosarivo);
+    --font-heading-playfair: var(--font-playfair);
+    --font-accent-italiana: var(--font-italiana);
+    --font-heading-gloock: var(--font-gloock);
+    --font-body-inter: var(--font-inter);
+  }
+  
+  .font-cormorant {
+    font-family: var(--font-cormorant);
+  }
+  .font-rosarivo {
+    font-family: var(--font-rosarivo);
+  }
+  .font-playfair {
+    font-family: var(--font-playfair);
+  }
+  .font-italiana {
+    font-family: var(--font-italiana);
+  }
+  .font-gloock {
+    font-family: var(--font-gloock);
+  }
+  .font-inter {
+    font-family: var(--font-inter);
+  }
+  

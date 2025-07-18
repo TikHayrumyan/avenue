@@ -47,12 +47,12 @@ export default function Navigation() {
           >
             <Link
               href={link.href}
-              className={`relative font-cormorant text-lg  text-gray-800 hover:text-gray-900  uppercase tracking-wide group px-1`}
+              className={`relative font-cormorant text-lg font-bold text-[#344e41] hover:text-[#a3b18a]  uppercase  group px-1`}
             >
               {link.name}
-              {link.hasDropdown && (
-                <span
-                  className={`absolute left-0 right-0 -bottom-1 h-0.5 rounded bg-gray-800 transition-transform duration-300 origin-left
+
+              <span
+                className={`absolute left-0 right-0 -bottom-1 h-[1px] rounded bg-[#344e41] transition-transform duration-300 origin-left
                     ${
                       openDropdown === link.dropdownType
                         ? "scale-x-100"
@@ -60,9 +60,8 @@ export default function Navigation() {
                     }
                     group-hover:scale-x-100
                   `}
-                  aria-hidden="true"
-                />
-              )}
+                aria-hidden="true"
+              />
             </Link>
             {link.hasDropdown && (
               <AnimatePresence>

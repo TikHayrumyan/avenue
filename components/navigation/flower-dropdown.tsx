@@ -42,13 +42,13 @@ export default function FlowerDropdown() {
       {/* Left side: 3 columns (approx 70%) */}
       <div className="md:col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-4">
         <div>
-          <h3 className="font-bold text-lg mb-4 text-gray-900">Collection</h3>
+          <h3 className="font-medium tracking-wide text-xl mb-4 text-gray-900 font-playfair">Collection</h3>
           <ul className="space-y-2">
             {collections.map((item) => (
               <li key={item.name}>
                 <Link
                   href={item.href}
-                  className="text-gray-700 hover:text-gray-900 text-sm"
+                  className="font-rosarivo text-sm text-muted-foreground hover:text-[#a3b18a]"
                 >
                   {item.name}
                 </Link>
@@ -57,13 +57,13 @@ export default function FlowerDropdown() {
           </ul>
         </div>
         <div>
-          <h3 className="font-bold text-lg mb-4 text-gray-900">Occasion</h3>
+          <h3 className="font-medium tracking-wide text-xl mb-4 text-gray-900 font-playfair">Occasion</h3>
           <ul className="space-y-2">
             {occasions.map((item) => (
               <li key={item.name}>
                 <Link
                   href={item.href}
-                  className="text-gray-700 hover:text-gray-900 text-sm"
+                  className="font-rosarivo text-sm text-muted-foreground hover:text-[#a3b18a]"
                 >
                   {item.name}
                 </Link>
@@ -72,13 +72,13 @@ export default function FlowerDropdown() {
           </ul>
         </div>
         <div>
-          <h3 className="font-bold text-lg mb-4 text-gray-900">Color</h3>
+          <h3 className="font-medium tracking-wide text-xl mb-4 text-gray-900 font-playfair">Color</h3>
           <ul className="space-y-2">
             {colors.map((item) => (
               <li key={item.name}>
                 <Link
                   href={item.href}
-                  className="text-gray-700 hover:text-gray-900 text-sm"
+                  className="font-rosarivo text-sm text-muted-foreground hover:text-[#a3b18a]"
                 >
                   {item.name}
                 </Link>
@@ -90,7 +90,7 @@ export default function FlowerDropdown() {
 
       {/* Right side: Promotional images (approx 30%) */}
       <div className="md:col-span-4 grid grid-cols-1 gap-4">
-        <h3 className="font-bold text-lg mb-2 text-gray-900">Highlights</h3>
+        <h3 className="font-medium tracking-wide text-xl mb-4 text-gray-900 font-playfair">Highlights</h3>
         <FlowersCarousel />
       </div>
     </div>

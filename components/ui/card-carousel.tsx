@@ -146,7 +146,7 @@ export const Card = ({
     <>
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
-        className="relative z-10 flex h-80 w-56 flex-col items-start justify-end overflow-hidden rounded-lg bg-gray-100 md:h-[23rem] md:w-72 "
+        className="relative z-10 flex h-80 w-56 flex-col items-start justify-end overflow-hidden  bg-gray-100 md:h-[23rem] md:w-72 "
       >
         {/* Black overlay for better text visibility */}
         <div className="pointer-events-none absolute inset-x-0 top-0 z-30 h-full bg-gradient-to-t from-black/80  via-transparent to-transparent" />

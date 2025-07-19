@@ -1,7 +1,10 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
-import { FaFacebook, FaInstagram, FaLinkedin, FaTiktok, FaTwitter } from "react-icons/fa";
+import React, { useState } from "react";
+import { FaFacebook, FaInstagram, FaTiktok } from "react-icons/fa";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
 
 interface Footer7Props {
   logo?: {
@@ -58,9 +61,21 @@ const defaultSections = [
 ];
 
 const defaultSocialLinks = [
-  { icon: <FaInstagram className="size-5 text-[#344e41]" />, href: "#", label: "Instagram" },
-  { icon: <FaFacebook className="size-5 text-[#344e41]" />, href: "#", label: "Facebook" },
-  { icon: <FaTiktok className="size-5 text-[#344e41]" />, href: "#", label: "Tik-tok" },
+  {
+    icon: <FaInstagram className="size-5 text-[#344e41]" />,
+    href: "#",
+    label: "Instagram",
+  },
+  {
+    icon: <FaFacebook className="size-5 text-[#344e41]" />,
+    href: "#",
+    label: "Facebook",
+  },
+  {
+    icon: <FaTiktok className="size-5 text-[#344e41]" />,
+    href: "#",
+    label: "Tik-tok",
+  },
 ];
 
 const defaultLegalLinks = [
@@ -80,6 +95,26 @@ export const Footer = ({
   copyright = "© 2024 Venue de flowers. All rights reserved.",
   legalLinks = defaultLegalLinks,
 }: Footer7Props) => {
+  const [email, setEmail] = useState<string>("");
+  const [message, setMessage] = useState("");
+  const [isSubscribed, setIsSubscribed] = useState(false);
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    setMessage(""); // Clear previous messages
+    if (email && email.includes("@")) {
+      // Simulate API call
+      setTimeout(() => {
+        setMessage("Thank you for subscribing!");
+        setIsSubscribed(true);
+        setEmail(""); // Clear input after successful subscription
+      }, 1000);
+    } else {
+      setMessage("Please enter a valid email address.");
+      setIsSubscribed(false);
+    }
+  };
+
   return (
     <section className="py-32 px-6 sm:px-6 md:px-6 lg:px-20 xl:px-10 2xl:px-20 bg-[#f2f2f2]">
       <div className="">
@@ -99,7 +134,37 @@ export const Footer = ({
               </Link>
             </div>
             <div>
-              subscribe input
+              {/* Subscribe part */}
+              <h3 className="mb-4 font-playfair text-xl font-medium tracking-wide text-[#344e41]">
+                Subscribe to our Newsletter
+              </h3>
+              {!isSubscribed ? (
+                <form
+                  onSubmit={handleSubscribe}
+                  className="flex flex-col sm:flex-row gap-2"
+                >
+                  <Input
+                    type="email"
+                    placeholder="Enter your email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="flex-1 min-w-[200px] border-2 border-[#344e41] bg-transparent placeholder:text-[#a3b18a] focus:ring-0 focus:border-[#a3b18a] rounded-sm px-4 py-2 text-[#344e41]"
+                  />
+                  <Button
+                    type="submit"
+                    className="bg-[#344e41] text-[#f2f2f2] hover:bg-[#a3b18a] hover:text-[#344e41] rounded-sm border-2 border-[#344e41] px-6 py-2 transition-colors duration-200"
+                  >
+                    Subscribe
+                  </Button>
+                </form>
+              ) : (
+                <div className="text-[#344e41] font-rosarivo text-base">
+                  {message}
+                </div>
+              )}
+              {message && !isSubscribed && (
+                <p className="text-red-500 text-sm mt-2">{message}</p>
+              )}
             </div>
             <ul className="flex items-center space-x-6 text-muted-foreground">
               {socialLinks.map((social, idx) => (
@@ -114,7 +179,9 @@ export const Footer = ({
           <div className="grid w-full gap-6 md:grid-cols-3 lg:gap-20">
             {sections.map((section, sectionIdx) => (
               <div key={sectionIdx}>
-                <h3 className="mb-4  font-playfair text-xl font-medium tracking-wide ">{section.title}</h3>
+                <h3 className="mb-4  font-playfair text-xl font-medium tracking-wide ">
+                  {section.title}
+                </h3>
                 <ul className="space-y-3 text-sm text-muted-foreground">
                   {section.links.map((link, linkIdx) => (
                     <li
@@ -130,10 +197,15 @@ export const Footer = ({
           </div>
         </div>
         <div className="mt-8 flex flex-col justify-between gap-4 border-t py-8 border-[#344e41] text-xs font-medium text-muted-foreground md:flex-row md:items-center md:text-left">
-          <p className="order-2 lg:order-1 font-rosarivo text-xs text-muted-foreground hover:text-[#a3b18a]">{copyright}</p>
+          <p className="order-2 lg:order-1 font-rosarivo text-xs text-muted-foreground hover:text-[#a3b18a]">
+            {copyright}
+          </p>
           <ul className="order-1 flex flex-col gap-2 md:order-2 md:flex-row">
             {legalLinks.map((link, idx) => (
-              <li key={idx} className="font-rosarivo text-xs text-muted-foreground hover:text-[#a3b18a]">
+              <li
+                key={idx}
+                className="font-rosarivo text-xs text-muted-foreground hover:text-[#a3b18a]"
+              >
                 <Link href={link.href}> {link.name}</Link>
               </li>
             ))}

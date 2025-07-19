@@ -1,6 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
-import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaLinkedin, FaTiktok, FaTwitter } from "react-icons/fa";
 
 interface Footer7Props {
   logo?: {
@@ -57,10 +58,9 @@ const defaultSections = [
 ];
 
 const defaultSocialLinks = [
-  { icon: <FaInstagram className="size-5" />, href: "#", label: "Instagram" },
-  { icon: <FaFacebook className="size-5" />, href: "#", label: "Facebook" },
-  { icon: <FaTwitter className="size-5" />, href: "#", label: "Twitter" },
-  { icon: <FaLinkedin className="size-5" />, href: "#", label: "LinkedIn" },
+  { icon: <FaInstagram className="size-5 text-[#344e41]" />, href: "#", label: "Instagram" },
+  { icon: <FaFacebook className="size-5 text-[#344e41]" />, href: "#", label: "Facebook" },
+  { icon: <FaTiktok className="size-5 text-[#344e41]" />, href: "#", label: "Tik-tok" },
 ];
 
 const defaultLegalLinks = [
@@ -70,45 +70,43 @@ const defaultLegalLinks = [
 
 export const Footer = ({
   logo = {
-    url: "https://www.shadcnblocks.com",
-    src: "https://www.shadcnblocks.com/images/block/logos/shadcnblockscom-icon.svg",
+    url: "/",
+    src: "/logos/test-logo-black.png",
     alt: "logo",
-    title: "Shadcnblocks.com",
+    title: "Venue de flowers",
   },
   sections = defaultSections,
-  description = "A collection of components for your startup business or side project.",
   socialLinks = defaultSocialLinks,
-  copyright = "© 2024 Shadcnblocks.com. All rights reserved.",
+  copyright = "© 2024 Venue de flowers. All rights reserved.",
   legalLinks = defaultLegalLinks,
 }: Footer7Props) => {
   return (
-    <section className="py-32">
-      <div className="container mx-auto">
+    <section className="py-32 px-6 sm:px-6 md:px-6 lg:px-20 xl:px-10 2xl:px-20 bg-[#f2f2f2]">
+      <div className="">
         <div className="flex w-full flex-col justify-between gap-10 lg:flex-row lg:items-start lg:text-left">
           <div className="flex w-full flex-col justify-between gap-6 lg:items-start">
             {/* Logo */}
             <div className="flex items-center gap-2 lg:justify-start">
-              <a href={logo.url}>
+              <Link href={logo.url}>
                 <Image
                   src={logo.src}
                   alt={logo.alt}
                   title={logo.title}
-                  className="h-8 w-auto"
-                  width={500}
-                  height={500}
+                  width={150}
+                  height={100}
+                  className="w-[150px] h-auto object-cover"
                 />
-              </a>
-              <h2 className="text-xl font-semibold">{logo.title}</h2>
+              </Link>
             </div>
-            <p className="max-w-[70%] text-sm text-muted-foreground">
-              {description}
-            </p>
+            <div>
+              subscribe input
+            </div>
             <ul className="flex items-center space-x-6 text-muted-foreground">
               {socialLinks.map((social, idx) => (
                 <li key={idx} className="font-medium hover:text-primary">
-                  <a href={social.href} aria-label={social.label}>
+                  <Link href={social.href} aria-label={social.label}>
                     {social.icon}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -116,14 +114,14 @@ export const Footer = ({
           <div className="grid w-full gap-6 md:grid-cols-3 lg:gap-20">
             {sections.map((section, sectionIdx) => (
               <div key={sectionIdx}>
-                <h3 className="mb-4 font-bold">{section.title}</h3>
+                <h3 className="mb-4  font-playfair text-xl font-medium tracking-wide ">{section.title}</h3>
                 <ul className="space-y-3 text-sm text-muted-foreground">
                   {section.links.map((link, linkIdx) => (
                     <li
                       key={linkIdx}
-                      className="font-medium hover:text-primary"
+                      className="font-rosarivo text-sm text-muted-foreground hover:text-[#a3b18a]"
                     >
-                      <a href={link.href}>{link.name}</a>
+                      <Link href={link.href}>{link.name}</Link>
                     </li>
                   ))}
                 </ul>
@@ -131,12 +129,12 @@ export const Footer = ({
             ))}
           </div>
         </div>
-        <div className="mt-8 flex flex-col justify-between gap-4 border-t py-8 text-xs font-medium text-muted-foreground md:flex-row md:items-center md:text-left">
-          <p className="order-2 lg:order-1">{copyright}</p>
+        <div className="mt-8 flex flex-col justify-between gap-4 border-t py-8 border-[#344e41] text-xs font-medium text-muted-foreground md:flex-row md:items-center md:text-left">
+          <p className="order-2 lg:order-1 font-rosarivo text-xs text-muted-foreground hover:text-[#a3b18a]">{copyright}</p>
           <ul className="order-1 flex flex-col gap-2 md:order-2 md:flex-row">
             {legalLinks.map((link, idx) => (
-              <li key={idx} className="hover:text-primary">
-                <a href={link.href}> {link.name}</a>
+              <li key={idx} className="font-rosarivo text-xs text-muted-foreground hover:text-[#a3b18a]">
+                <Link href={link.href}> {link.name}</Link>
               </li>
             ))}
           </ul>

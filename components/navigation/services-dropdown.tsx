@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { motion } from "motion/react";
+import { Card, Carousel } from "../ui/card-carousel";
 
 const ServicesData = [
   {
@@ -38,12 +39,29 @@ const ServicesData = [
 ];
 
 export default function ServicesDropdown() {
+  // Prepare cards for the Card/Carousel
+  const cards = ServicesData.map((item) => (
+    <Card
+      key={item.src}
+      card={{
+        src: item.src,
+        title: item.title,
+        category: "Services",
+      }}
+    />
+  ));
+
   return (
     <div>
-      <h3 className="font-medium tracking-wide lg:text-xl xl:text-3xl mb-4 text-gray-900 font-playfair">
+      {/* Section Title for Mobile */}
+      <h3 className="hidden lg:flex font-medium tracking-wide  lg:text-xl xl:text-3xl mb-4 text-[#344e41] font-playfair justify-start">
         Our Services
       </h3>
-      <div className="flex justify-between w-full xl:h-76 gap-4">
+      {/* Mobile: Card Carousel (same as highlights) */}
+      <div className="block lg:hidden relative">
+        <Carousel items={cards} />
+      </div>
+      <div className="hidden lg:flex justify-between w-full  xl:h-76 gap-4  md:flex">
         {ServicesData.map((item) => {
           return (
             <motion.div
@@ -71,7 +89,7 @@ export default function ServicesDropdown() {
                   className="object-cover w-auto h-full aspect-square"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none" />
-                <span className="absolute bottom-2 left-2 text-[#f2f2f2] font-medium lg:text-lg xl:text-2xl font-playfair z-10">
+                <span className="absolute bottom-2 left-2 text-[#f2f2f2] font-medium  lg:text-lg xl:text-2xl font-playfair z-10">
                   {item.title}
                   <span className="block absolute left-0 -bottom-1 h-[2px] w-full bg-[#f2f2f2] transition-transform duration-300 origin-left scale-x-0 group-hover:scale-x-100"></span>
                 </span>

@@ -7,36 +7,44 @@ import FlowerDropdown from "./flower-dropdown";
 import AccessoriesDropdown from "./accessories-dropdown";
 import ServicesDropdown from "./services-dropdown";
 
+// TODO: Extract mainLinks and dropdown logic to a shared module for reuse in mobile navigation
+
+export const mainLinks = [
+  {
+    name: "Flowers",
+    href: "/flowers",
+    hasDropdown: true,
+    dropdownType: "flowers",
+  },
+  {
+    name: "Accessories",
+    href: "/accessories",
+    hasDropdown: true,
+    dropdownType: "accessories",
+  },
+  {
+    name: "Services",
+    href: "/services",
+    hasDropdown: true,
+    dropdownType: "services",
+  },
+  { name: "DIY", href: "/do-it-yourself" },
+  { name: "Our Story", href: "/our-story" },
+  { name: "Contact", href: "/contact" },
+];
+
+export const dropdownComponents = {
+  flowers: FlowerDropdown,
+  accessories: AccessoriesDropdown,
+  services: ServicesDropdown,
+};
+
 export default function Navigation() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   const handleMouseEnter = (dropdown: string | null) =>
     setOpenDropdown(dropdown);
   const handleMouseLeave = () => setOpenDropdown(null);
-
-  const mainLinks = [
-    {
-      name: "Flowers",
-      href: "/flowers",
-      hasDropdown: true,
-      dropdownType: "flowers",
-    },
-    {
-      name: "Accessories",
-      href: "/accessories",
-      hasDropdown: true,
-      dropdownType: "accessories",
-    },
-    {
-      name: "Services",
-      href: "/services",
-      hasDropdown: true,
-      dropdownType: "services",
-    },
-    { name: "DIY", href: "/do-it-yourself" },
-    { name: "Our Story", href: "/our-story" },
-    { name: "Contact", href: "/contact" },
-  ];
 
   return (
     <nav className="hidden md:flex items-center h-full ">
@@ -87,7 +95,6 @@ export default function Navigation() {
                         <AccessoriesDropdown />
                       )}
                       {link.dropdownType === "services" && <ServicesDropdown />}
-
                     </div>
                   </motion.div>
                 )}

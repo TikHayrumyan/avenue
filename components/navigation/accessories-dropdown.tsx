@@ -3,19 +3,20 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { motion } from "motion/react";
+import { Card, Carousel } from "../ui/card-carousel";
 
 const AccessoriesData = [
   {
     id: 1,
     title: "Wedding Bouquets",
     url: "#",
-    src: "/accessories/peonies.jpeg",
+    src: "/accessories/peonies.jpg",
   },
   {
     id: 2,
     title: "Candles",
     url: "#",
-    src: "/accessories/candles.jpeg",
+    src: "/accessories/candles.jpg",
   },
   {
     id: 3,
@@ -37,13 +38,31 @@ const AccessoriesData = [
   },
 ];
 
+
 export default function AccessoriesDropdown() {
+  // Prepare cards for the Card/Carousel
+  const cards = AccessoriesData.map((item) => (
+    <Card
+      key={item.src}
+      card={{
+        src: item.src,
+        title: item.title,
+        category: "Accessories",
+      }}
+    />
+  ));
+
   return (
     <div>
-      <h3 className="font-medium tracking-wide lg:text-xl xl:text-3xl mb-4 text-gray-900 font-playfair">
+      {/* Section Title for Mobile */}
+      <h3 className="hidden lg:flex font-medium tracking-wide  lg:text-xl xl:text-3xl mb-4 text-[#344e41] font-playfair justify-start">
         Accessories
       </h3>
-      <div className="flex justify-between w-full xl:h-76 gap-4">
+      {/* Mobile: Card Carousel (same as highlights) */}
+      <div className="block md:hidden relative">
+        <Carousel items={cards} />
+      </div>
+      <div className="hidden lg:flex justify-between w-full  xl:h-76 gap-4  md:flex">
         {AccessoriesData.map((item) => {
           return (
             <motion.div

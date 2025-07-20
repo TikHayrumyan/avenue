@@ -1,5 +1,7 @@
+'use client'
 import Link from "next/link";
 import { FlowersCarousel } from "./flowers-carousel";
+import { useState } from "react";
 
 const collections = [
   { name: "All Bouquets", href: "#" },
@@ -36,62 +38,136 @@ const colors = [
   { name: "Orange", href: "#" },
 ];
 
+const mobileSections = [
+  {
+    key: "collection",
+    title: "Collection",
+    items: collections,
+  },
+  {
+    key: "occasion",
+    title: "Occasion",
+    items: occasions,
+  },
+  {
+    key: "color",
+    title: "Color",
+    items: colors,
+  },
+];
+
 export default function FlowerDropdown() {
+  const [openSection, setOpenSection] = useState<string | null>(null);
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-7 gap-8">
-      {/* Left side: 3 columns (approx 70%) */}
-      <div className="md:col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-4">
-        <div>
-          <h3 className="font-medium tracking-wide lg:text-lg xl:text-xl mb-4 text-gray-900 font-playfair">Collection</h3>
-          <ul className="space-y-2">
-            {collections.map((item) => (
-              <li key={item.name}>
-                <Link
-                  href={item.href}
-                  className="font-rosarivo lg:text-xs xl:text-sm text-muted-foreground hover:text-[#a3b18a]"
-                >
-                  {item.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <h3 className="font-medium tracking-wide lg:text-lg xl:text-xl mb-4 text-gray-900 font-playfair">Occasion</h3>
-          <ul className="space-y-2">
-            {occasions.map((item) => (
-              <li key={item.name}>
-                <Link
-                  href={item.href}
-                  className="font-rosarivo lg:text-xs xl:text-sm text-muted-foreground hover:text-[#a3b18a]"
-                >
-                  {item.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <h3 className="font-medium tracking-wide lg:text-lg xl:text-xl mb-4 text-gray-900 font-playfair">Color</h3>
-          <ul className="space-y-2">
-            {colors.map((item) => (
-              <li key={item.name}>
-                <Link
-                  href={item.href}
-                  className="font-rosarivo lg:text-xs xl:text-sm text-muted-foreground hover:text-[#a3b18a]"
-                >
-                  {item.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
+    <div>
+      {/* Mobile: Accordions */}
+      <div className="block md:hidden">
+        {mobileSections.map((section) => (
+          <div key={section.key} className="mb-2">
+            <button
+              className="w-full flex justify-between items-center py-2 px-2 font-cormorant text-base font-bold text-[#344e41] hover:text-[#a3b18a] uppercase focus:outline-none bg-[#f2f2f2]"
+              onClick={() =>
+                setOpenSection(openSection === section.key ? null : section.key)
+              }
+              aria-expanded={openSection === section.key}
+              aria-controls={`flower-mobile-${section.key}`}
+            >
+              {section.title}
+              <span>{openSection === section.key ? "-" : "+"}</span>
+            </button>
+            {openSection === section.key && (
+              <ul
+                id={`flower-mobile-${section.key}`}
+                className="pl-4 py-2 space-y-2 bg-white"
+              >
+                {section.items.map((item) => (
+                  <li key={item.name}>
+                    <Link
+                      href={item.href}
+                      className="font-rosarivo text-sm text-muted-foreground hover:text-[#a3b18a]"
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        ))}
+        {/* Highlights always visible at the end */}
+        <div className="mt-4">
+          <h3 className="font-medium tracking-wide text-base mb-2 text-gray-900 font-playfair">
+            Highlights
+          </h3>
+          <FlowersCarousel />
         </div>
       </div>
 
-      {/* Right side: Promotional images (approx 30%) */}
-      <div className="md:col-span-4 grid grid-cols-1 gap-4">
-        <h3 className="font-medium tracking-wide lg:text-lg xl:text-xl mb-4 text-gray-900 font-playfair">Highlights</h3>
-        <FlowersCarousel />
+      {/* Desktop: Original grid layout */}
+      <div className="hidden md:grid grid-cols-7 gap-8">
+        {/* Left side: 3 columns (approx 70%) */}
+        <div className="col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-4">
+          <div>
+            <h3 className="font-medium tracking-wide lg:text-lg xl:text-xl mb-4 text-gray-900 font-playfair">
+              Collection
+            </h3>
+            <ul className="space-y-2">
+              {collections.map((item) => (
+                <li key={item.name}>
+                  <Link
+                    href={item.href}
+                    className="font-rosarivo lg:text-xs xl:text-sm text-muted-foreground hover:text-[#a3b18a]"
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-medium tracking-wide lg:text-lg xl:text-xl mb-4 text-gray-900 font-playfair">
+              Occasion
+            </h3>
+            <ul className="space-y-2">
+              {occasions.map((item) => (
+                <li key={item.name}>
+                  <Link
+                    href={item.href}
+                    className="font-rosarivo lg:text-xs xl:text-sm text-muted-foreground hover:text-[#a3b18a]"
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-medium tracking-wide lg:text-lg xl:text-xl mb-4 text-gray-900 font-playfair">
+              Color
+            </h3>
+            <ul className="space-y-2">
+              {colors.map((item) => (
+                <li key={item.name}>
+                  <Link
+                    href={item.href}
+                    className="font-rosarivo lg:text-xs xl:text-sm text-muted-foreground hover:text-[#a3b18a]"
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Right side: Promotional images (approx 30%) */}
+        <div className="col-span-4 grid grid-cols-1 gap-4">
+          <h3 className="font-medium tracking-wide lg:text-lg xl:text-xl mb-4 text-gray-900 font-playfair">
+            Highlights
+          </h3>
+          <FlowersCarousel />
+        </div>
       </div>
     </div>
   );

@@ -146,7 +146,7 @@ export const Card = ({
     <>
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
-        className="relative z-10 flex xl:h-80 xl:w-56 flex-col items-start justify-end overflow-hidden  bg-gray-100 lg:h-[23rem] lg:w-72 "
+        className="relative z-10 flex h-80 w-56 xl:h-80 xl:w-56 flex-col items-start justify-end overflow-hidden  bg-gray-100 lg:h-[23rem] lg:w-72 "
       >
         {/* Black overlay for better text visibility */}
         <div className="pointer-events-none absolute inset-x-0 top-0 z-30 h-full bg-gradient-to-t from-black/80  via-transparent to-transparent" />
@@ -159,7 +159,7 @@ export const Card = ({
           </motion.p>
           <motion.p
             layoutId={layout ? `title-${card.title}` : undefined}
-            className="mt-1 max-w-xs text-left font-sans text-lg font-semibold [text-wrap:balance] leading-7  text-white md:text-2xl"
+            className=" text-left font-sans text-sm font-semibold [text-wrap:balance] leading-5  text-white md:text-lg"
           >
             {card.title}
           </motion.p>

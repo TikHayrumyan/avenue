@@ -62,7 +62,7 @@ export default function FlowerDropdown() {
   return (
     <div>
       {/* Mobile: Accordions */}
-      <div className="block md:hidden">
+      <div className="block lg:hidden">
         {mobileSections.map((section) => (
           <div key={section.key} className="mb-2">
             <button
@@ -105,7 +105,7 @@ export default function FlowerDropdown() {
       </div>
 
       {/* Desktop: Original grid layout */}
-      <div className="hidden md:grid grid-cols-7 gap-8">
+      <div className="hidden lg:grid grid-cols-7 gap-8">
         {/* Left side: 3 columns (approx 70%) */}
         <div className="col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-4">
           <div>

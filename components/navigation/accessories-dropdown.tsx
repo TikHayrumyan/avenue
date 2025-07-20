@@ -59,10 +59,10 @@ export default function AccessoriesDropdown() {
         Accessories
       </h3>
       {/* Mobile: Card Carousel (same as highlights) */}
-      <div className="block md:hidden relative">
+      <div className="block lg:hidden relative">
         <Carousel items={cards} />
       </div>
-      <div className="hidden lg:flex justify-between w-full  xl:h-76 gap-4  md:flex">
+      <div className="hidden lg:flex justify-between w-full  xl:h-76 gap-4  lg:flex">
         {AccessoriesData.map((item) => {
           return (
             <motion.div

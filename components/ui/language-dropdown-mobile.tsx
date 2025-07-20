@@ -20,9 +20,9 @@ export default function LanguageDropdownMobile() {
   };
 
   return (
-    <div className="w-full md:w-auto">
+    <div className="w-full lg:w-auto">
       {/* Mobile: Inline Accordion */}
-      <div className="block md:hidden w-full">
+      <div className="block lg:hidden w-full">
         <button
           className="flex w-full font-cormorant items-center gap-2 px-4 py-3 border-0 shadow-none text-base font-bold text-[#344e41] hover:text-[#a3b18a] focus:outline-none focus:ring-2 focus:ring-[#a3b18a] transition-colors duration-300 cursor-pointer uppercase group justify-between bg-white rounded-md"
           aria-haspopup="true"
@@ -71,7 +71,7 @@ export default function LanguageDropdownMobile() {
         </AnimatePresence>
       </div>
       {/* Desktop: Dropdown Overlay */}
-      <div className="hidden md:flex relative h-full items-center">
+      <div className="hidden lg:flex relative h-full items-center">
         <button
           className="relative flex font-cormorant items-center gap-2 px-4 py-2 border-0 shadow-none lg:text-sm xl:text-lg font-bold text-[#344e41] hover:text-[#a3b18a] focus:outline-none focus:ring-2 focus:ring-[#a3b18a] transition-colors duration-300 cursor-pointer uppercase group"
           aria-haspopup="true"

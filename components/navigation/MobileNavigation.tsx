@@ -18,7 +18,7 @@ export default function MobileNavigation() {
     <>
       {/* Hamburger Button */}
       <button
-        className="md:hidden flex items-center justify-center p-2 focus:outline-none"
+        className="lg:hidden flex items-center justify-center p-2 focus:outline-none"
         aria-label="Open menu"
         onClick={() => setMenuOpen(true)}
       >

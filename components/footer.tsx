@@ -86,7 +86,7 @@ const defaultLegalLinks = [
 export const Footer = ({
   logo = {
     url: "/",
-    src: "/logos/test-logo-black.png",
+    src: "/logos/logo.png",
     alt: "logo",
     title: "Venue de flowers",
   },
@@ -121,15 +121,15 @@ export const Footer = ({
         <div className="flex w-full flex-col justify-between gap-10 lg:flex-row lg:items-start lg:text-left">
           <div className="flex w-full flex-col justify-between gap-6 lg:items-start">
             {/* Logo */}
-            <div className="flex items-center gap-2 lg:justify-start">
-              <Link href={logo.url}>
+            <div className="flex items-center lg:justify-start">
+              <Link href={logo.url} className="flex">
                 <Image
                   src={logo.src}
                   alt={logo.alt}
                   title={logo.title}
-                  width={150}
-                  height={100}
-                  className="w-[150px] h-auto object-cover"
+                  width={250}
+                  height={200}
+                  className="w-full h-full object-cover"
                 />
               </Link>
             </div>

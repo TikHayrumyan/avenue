@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import FlowerDropdown from "./flower-dropdown";
 import AccessoriesDropdown from "./accessories-dropdown";
+import ServicesDropdown from "./services-dropdown";
 
 export default function Navigation() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -26,6 +27,12 @@ export default function Navigation() {
       hasDropdown: true,
       dropdownType: "accessories",
     },
+    {
+      name: "Services",
+      href: "/services",
+      hasDropdown: true,
+      dropdownType: "services",
+    },
     { name: "DIY", href: "/do-it-yourself" },
     { name: "Our Story", href: "/our-story" },
     { name: "Contact", href: "/contact" },
@@ -33,7 +40,7 @@ export default function Navigation() {
 
   return (
     <nav className="hidden md:flex items-center h-full ">
-      <ul className="flex space-x-8 h-full">
+      <ul className="flex lg:space-x-3 xl:space-x-6 h-full">
         {mainLinks.map((link) => (
           <li
             key={link.name}
@@ -47,7 +54,7 @@ export default function Navigation() {
           >
             <Link
               href={link.href}
-              className={`relative font-cormorant text-lg font-bold text-[#344e41] hover:text-[#a3b18a]  uppercase  group px-1`}
+              className={`relative font-cormorant lg:text-sm xl:text-lg font-bold text-[#344e41] hover:text-[#a3b18a]  uppercase  group px-1`}
             >
               {link.name}
 
@@ -79,6 +86,8 @@ export default function Navigation() {
                       {link.dropdownType === "accessories" && (
                         <AccessoriesDropdown />
                       )}
+                      {link.dropdownType === "services" && <ServicesDropdown />}
+
                     </div>
                   </motion.div>
                 )}

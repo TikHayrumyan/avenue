@@ -9,16 +9,16 @@ export default function Header() {
       <section className="w-full flex items-center justify-between h-full">
         <Image
           alt="logo"
-          src="/logos/test-logo-black.png"
-          width={150}
+          src="/logos/logo.png"
+          width={200}
           height={100}
-          className="w-[150px] h-auto object-cover"
+          className="w-[90px] xl:w-[110px] h-full object-cover"
         />
         <Navigation /> {/* Desktop navigation */}
-        <div className="flex items-center gap-6">
+        <div className="flex items-center xl:gap-6">
           <LanguageDropdown />
           <Link
-            className="relative font-cormorant group text-lg font-bold text-[#344e41] hover:text-[#a3b18a]  uppercase"
+            className="relative font-cormorant group lg:text-sm xl:text-lg font-bold text-[#344e41] hover:text-[#a3b18a]  uppercase"
             href="/sign-in"
           >
             Sign In

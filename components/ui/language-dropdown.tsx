@@ -27,7 +27,7 @@ export default function LanguageDropdown() {
     >
       {/* Dropdown Trigger Button */}
       <button
-        className="relative flex  font-cormorant  items-center gap-2 px-4 py-2 border-0 shadow-none text-lg font-bold text-[#344e41] hover:text-[#a3b18a] focus:outline-none focus:ring-2 focus:ring-[#a3b18a] transition-colors duration-300 cursor-pointer uppercase group"
+        className="relative flex  font-cormorant  items-center gap-2 px-4 py-2 border-0 shadow-none lg:text-sm xl:text-lg font-bold text-[#344e41] hover:text-[#a3b18a] focus:outline-none focus:ring-2 focus:ring-[#a3b18a] transition-colors duration-300 cursor-pointer uppercase group"
         aria-haspopup="true"
         aria-expanded={isOpen}
         onClick={() => setIsOpen(!isOpen)} // Allows click to toggle on smaller screens/touch
@@ -61,7 +61,7 @@ export default function LanguageDropdown() {
                 <li key={lang.code}>
                   <button
                     onClick={() => handleSelectLanguage(lang)}
-                    className={`relative w-full text-left px-4 py-2 text-black hover:bg-gray-100 hover:text-[#a3b18a] transition-colors duration-200 font-semibold cursor-pointer font-cormorant uppercase group`}
+                    className={`relative w-full text-left px-4 py-2 text-black lg:text-sm  hover:bg-gray-100 hover:text-[#a3b18a] transition-colors duration-200 font-semibold cursor-pointer font-cormorant uppercase group`}
                   >
                     {lang.label}
                     <span

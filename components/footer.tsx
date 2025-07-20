@@ -148,11 +148,11 @@ export const Footer = ({
                     placeholder="Enter your email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="flex-1 min-w-[200px] border-2 border-[#344e41] bg-transparent placeholder:text-[#a3b18a] focus:ring-0 focus:border-[#a3b18a] rounded-sm px-4 py-2 text-[#344e41]"
+                    className="flex-1 min-w-[200px] border-1 border-[#344e41] bg-transparent placeholder:text-[#a3b18a] focus:ring-0  focus-visible:ring-0 rounded-sm px-4 py-2 text-[#344e41]"
                   />
                   <Button
                     type="submit"
-                    className="bg-[#344e41] text-[#f2f2f2] hover:bg-[#a3b18a] hover:text-[#344e41] rounded-sm border-2 border-[#344e41] px-6 py-2 transition-colors duration-200"
+                    className="bg-[#344e41] text-[#f2f2f2] hover:bg-[#344e41]/90 cursor-pointer rounded-sm border-2 border-[#344e41] px-6 py-2 transition-colors duration-200"
                   >
                     Subscribe
                   </Button>

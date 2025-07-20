@@ -62,7 +62,7 @@ export default function AccessoriesDropdown() {
       <div className="block lg:hidden relative">
         <Carousel items={cards} />
       </div>
-      <div className="hidden lg:flex justify-between w-full  xl:h-76 gap-4  lg:flex">
+      <div className="hidden lg:flex justify-between w-full  xl:h-86 gap-4 ">
         {AccessoriesData.map((item) => {
           return (
             <motion.div
@@ -81,11 +81,11 @@ export default function AccessoriesDropdown() {
               }}
               key={"card" + item.id}
             >
-              <Link href={item.url} className="relative group">
+              <Link href={item.url} className="relative group ">
                 <Image
                   src={item.src}
-                  width={500}
-                  height={500}
+                  width={600}
+                  height={700}
                   alt={item.title}
                   className="object-cover w-auto h-full aspect-square"
                 />

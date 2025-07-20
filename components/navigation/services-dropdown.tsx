@@ -61,7 +61,7 @@ export default function ServicesDropdown() {
       <div className="block lg:hidden relative">
         <Carousel items={cards} />
       </div>
-      <div className="hidden lg:flex justify-between w-full  xl:h-76 gap-4 ">
+      <div className="hidden lg:flex justify-between w-full  xl:h-86 gap-4 ">
         {ServicesData.map((item) => {
           return (
             <motion.div

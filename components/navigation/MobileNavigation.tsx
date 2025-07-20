@@ -3,8 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { mainLinks, dropdownComponents } from "./nav";
-import LanguageDropdown from "../ui/language-dropdown";
 import { Menu, X } from "lucide-react";
+import LanguageDropdownMobile from "../ui/language-dropdown-mobile";
 
 export default function MobileNavigation() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -86,7 +86,7 @@ export default function MobileNavigation() {
             </ul>
           </nav>
           <div className="mt-8 border-t pt-4 flex flex-col gap-4">
-            <LanguageDropdown />
+            <LanguageDropdownMobile />
             <Link
               href="/sign-in"
               className="block font-cormorant text-lg font-bold text-[#344e41] hover:text-[#a3b18a] uppercase"

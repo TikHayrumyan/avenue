@@ -47,7 +47,7 @@ export default function Navigation() {
   const handleMouseLeave = () => setOpenDropdown(null);
 
   return (
-    <nav className="hidden md:flex items-center h-full ">
+    <nav className="hidden lg:flex items-center h-full ">
       <ul className="flex lg:space-x-3 xl:space-x-6 h-full">
         {mainLinks.map((link) => (
           <li

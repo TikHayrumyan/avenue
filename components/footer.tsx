@@ -32,30 +32,30 @@ interface Footer7Props {
 
 const defaultSections = [
   {
-    title: "Product",
+    title: "Flowers",
     links: [
-      { name: "Overview", href: "#" },
-      { name: "Pricing", href: "#" },
-      { name: "Marketplace", href: "#" },
-      { name: "Features", href: "#" },
+      { name: "All Bouquets", href: "#" },
+      { name: "Best Sellers", href: "#" },
+      { name: "Roses", href: "#" },
+      { name: "Peonies", href: "#" },
+    ],
+  },
+  {
+    title: "Accessories",
+    links: [
+      { name: "Wedding Bouquets", href: "#" },
+      { name: "Candles", href: "#" },
+      { name: "Christening Decorations", href: "#" },
+      { name: "Vases", href: "#" },
     ],
   },
   {
     title: "Company",
     links: [
-      { name: "About", href: "#" },
-      { name: "Team", href: "#" },
-      { name: "Blog", href: "#" },
-      { name: "Careers", href: "#" },
-    ],
-  },
-  {
-    title: "Resources",
-    links: [
-      { name: "Help", href: "#" },
-      { name: "Sales", href: "#" },
-      { name: "Advertise", href: "#" },
-      { name: "Privacy", href: "#" },
+      { name: "Servies", href: "/services" },
+      { name: "DIY", href: "/do-it-yourself" },
+      { name: "Our Story", href: "/our-story" },
+      { name: "Contact", href: "/contact" },
     ],
   },
 ];

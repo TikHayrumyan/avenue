@@ -6,14 +6,14 @@ import MobileNavigation from "./navigation/MobileNavigation";
 
 export default function Header() {
   return (
-    <header className="sticky top-0 px-6 sm:px-6 md:px-6 lg:px-20 xl:px-10 2xl:px-20 h-16 md:h-18 lg:h-20 2xl:h-20 items-center justify-center flex bg-[#f2f2f2]">
+    <header className="sticky z-50 top-0 px-6 sm:px-6 md:px-6 lg:px-20 xl:px-10 2xl:px-20 h-20  items-center justify-center flex bg-white">
       <section className="w-full flex items-center justify-between h-full">
         <Image
           alt="logo"
           src="/logos/logo.png"
           width={200}
           height={100}
-          className="w-[90px] xl:w-[110px] h-full object-cover"
+          className="w-auto h-10 xl:h-16 object-cover"
         />
         {/* Mobile Navigation (hamburger) visible on sm/md, hidden on lg+ */}
         <div className="flex lg:hidden items-center">

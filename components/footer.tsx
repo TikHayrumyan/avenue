@@ -116,7 +116,7 @@ export const Footer = ({
   };
 
   return (
-    <section className="py-32 px-6 sm:px-6 md:px-6 lg:px-20 xl:px-10 2xl:px-20 bg-[#f2f2f2]">
+    <section className="py-32 px-6 sm:px-6 md:px-6 lg:px-20 xl:px-10 2xl:px-20 bg-white">
       <div className="">
         <div className="flex w-full flex-col justify-between gap-10 lg:flex-row lg:items-start lg:text-left">
           <div className="flex w-full flex-col justify-between gap-6 lg:items-start">

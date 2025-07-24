@@ -1,0 +1,66 @@
+import Link from "next/link";
+import { Button } from "../ui/button";
+import { FaChevronDown } from "react-icons/fa";
+
+export default function Hero() {
+  return (
+    <section
+      className="flex w-full h-[80vh] relative bg-cover bg-center bg-no-repeat items-end justify-start px-6 sm:px-6 md:px-6 lg:px-20 xl:px-10 2xl:px-20"
+      style={{
+        backgroundImage: "url('/home/3.jpg')",
+      }}
+    >
+      {/* Enhanced Gradient Overlay with vignette */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-black/40 to-black/0 z-0" />
+      <div
+        className="absolute inset-0 pointer-events-none z-0"
+        style={{ boxShadow: "inset 0 0 120px 20px rgba(52, 78, 65, 0.25)" }}
+      />
+      <div className="relative z-10 flex flex-col items-center sm:items-start justify-center sm:justify-center w-full h-full  pb-10 sm:pb-16 md:pb-20">
+        <h1 className="font-cormorant text-4xl md:text-6xl font-medium text-[#f2f2f2] text-center sm:text-left drop-shadow-lg mb-2">
+          Welcome to Avenue de Fleurs
+        </h1>
+
+        {/* Vintage accent divider */}
+        <span
+          className="block w-16 h-1 bg-[#a3b18a] rounded-full mb-4 mx-auto sm:mx-0"
+          aria-hidden="true"
+        />
+        <p className="font-rosarivo text-lg md:text-2xl text-white text-center sm:text-left max-w-2xl mb-8 drop-shadow">
+          Elevate your moments with our curated selection of flowers,
+          accessories, and bespoke event services.{" "}
+          <span className="text-[#a3b18a] font-semibold">Vintage charm</span>{" "}
+          meets{" "}
+          <span className="text-[#a3b18a] font-semibold">
+            modern minimalism
+          </span>
+          .
+        </p>
+        <div className="flex  flex-col sm:flex-row gap-4 items-center sm:items-center justify-center sm:justify-start">
+          <Button
+            className="bg-[#344e41] cursor-pointer text-[#f2f2f2] hover:bg-[#a3b18a]  hover:text-[#344e41] font-cormorant text-lg px-8 py-3 rounded-md shadow-lg transition-transform duration-200 transform focus:outline-none focus:ring-2 focus:ring-[#a3b18a] focus:ring-offset-2"
+            size="lg"
+          >
+            Shop Flowers
+          </Button>
+          <Link
+            href="#gallery"
+            className="relative group font-rosarivo text-base md:text-lg text-[#f2f2f2]  transition-colors duration-200"
+            aria-label="View Gallery"
+          >
+            View Gallery
+            <span
+              className="absolute left-0 right-0 -bottom-1 h-[1px] rounded bg-white transition-transform duration-300 origin-left scale-x-0 group-hover:scale-x-100"
+              aria-hidden="true"
+            />
+          </Link>
+        </div>
+      </div>
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10">
+        <span className="animate-bounce text-white text-2xl">
+          <FaChevronDown />
+        </span>
+      </div>
+    </section>
+  );
+}

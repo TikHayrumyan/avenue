@@ -5,28 +5,32 @@ import { Carousel } from "../ui/card-carousel";
 import { Button } from "../ui/button";
 import Image from "next/image";
 import { TbShoppingBag } from "react-icons/tb";
+import Link from "next/link";
 export default function BestSellers() {
   const bestsellerCards = bestsellerData.map((product) => (
     <BestsellerCard key={product.id} product={product} />
   ));
 
   return (
-    <section className="container mx-auto px-4 py-16">
+    <section className="container mx-auto py-8">
       <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-12">
-        <div className="lg:w-1/3 mb-8 lg:mb-0">
-          <h2 className="text-3xl font-light text-gray-900 mb-4">
+        <div className="lg:w-1/3 mb-8 lg:mb-0 flex flex-col justify-between h-full">
+          <h2 className="font-cormorant text-4xl font-semibold tracking-wide  text-gray-900 mb-4">
             OUR BESTSELLERS
           </h2>
-          <p className="text-gray-600 mb-6 leading-relaxed">
-            Our selection of best selling bouquets by Ode à la Rose. Send a
-            beautiful bouquet today.
-          </p>
-          <Button
-            className="bg-[#a3b18a] uppercase cursor-pointer text-[#f2f2f2] hover:bg-[#a3b18a]/90 font-cormorant text-lg px-8 py-3 rounded-xs shadow-lg transition-transform duration-200 transform focus:outline-none focus:ring-2 focus:ring-[#a3b18a] focus:ring-offset-2"
-            size="lg"
-          >
-            Shop Bestsellers
-          </Button>
+          <div>
+            <p className="text-gray-600 mb-6 leading-relaxed">
+              Our selection of best selling bouquets by Ode à la Rose. Send a
+              beautiful bouquet today.
+            </p>
+            <Button
+              className="bg-[#a3b18a] uppercase cursor-pointer text-[#f2f2f2] hover:bg-[#a3b18a]/90 font-cormorant text-lg px-8 py-3 rounded-xs shadow-lg transition-transform duration-200 transform focus:outline-none focus:ring-2 focus:ring-[#a3b18a] focus:ring-offset-2"
+              size="lg"
+              asChild
+            >
+              <Link href={"#"}>Shop Bestsellers</Link>
+            </Button>
+          </div>
         </div>
 
         <div className="lg:w-2/3">

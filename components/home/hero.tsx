@@ -1,6 +1,8 @@
+"use client";
 import Link from "next/link";
 import { Button } from "../ui/button";
-import { FaChevronDown } from "react-icons/fa";
+import { IoMdArrowDown } from "react-icons/io";
+import { motion } from "motion/react";
 
 export default function Hero() {
   return (
@@ -50,9 +52,13 @@ export default function Hero() {
         </div>
       </div>
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10">
-        <span className="animate-bounce text-white text-2xl">
-          <FaChevronDown />
-        </span>
+        <motion.p
+          animate={{ y: [0, 8, 0] }}
+          transition={{ repeat: Infinity, duration: 1.2, ease: "easeInOut" }}
+          className="text-white text-2xl"
+        >
+          <IoMdArrowDown />
+        </motion.p>
       </div>
     </section>
   );

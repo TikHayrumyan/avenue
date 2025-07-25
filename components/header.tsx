@@ -24,7 +24,7 @@ export default function Header() {
         <div className="hidden lg:flex items-center xl:gap-6">
           <LanguageDropdown />
           <Link
-            className="relative font-cormorant group lg:text-sm xl:text-lg font-bold text-[#344e41] hover:text-[#a3b18a]  uppercase"
+            className="relative font-cormorant group lg:text-sm xl:text-lg font-bold text-[#344e41] hover:text-[#a07676]  uppercase"
             href="/sign-in"
           >
             Sign In

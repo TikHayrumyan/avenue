@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import Link from "next/link";
 import { FlowersCarousel } from "./flowers-carousel";
 import { useState } from "react";
@@ -66,7 +66,7 @@ export default function FlowerDropdown() {
         {mobileSections.map((section) => (
           <div key={section.key} className="mb-2">
             <button
-              className="w-full flex justify-between items-center py-2 px-2 font-cormorant text-base font-bold text-[#344e41] hover:text-[#a3b18a] uppercase focus:outline-none bg-[#f2f2f2]"
+              className="w-full flex justify-between items-center py-2 px-2 font-cormorant text-base font-bold text-[#344e41] hover:text-[#a07676] uppercase focus:outline-none bg-[#f2f2f2]"
               onClick={() =>
                 setOpenSection(openSection === section.key ? null : section.key)
               }
@@ -85,7 +85,7 @@ export default function FlowerDropdown() {
                   <li key={item.name}>
                     <Link
                       href={item.href}
-                      className="font-rosarivo text-sm text-muted-foreground hover:text-[#a3b18a]"
+                      className="font-rosarivo text-sm text-muted-foreground hover:text-[#a07676]"
                     >
                       {item.name}
                     </Link>
@@ -117,7 +117,7 @@ export default function FlowerDropdown() {
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="font-rosarivo lg:text-xs xl:text-sm text-muted-foreground hover:text-[#a3b18a]"
+                    className="font-rosarivo lg:text-xs xl:text-sm text-muted-foreground hover:text-[#a07676]"
                   >
                     {item.name}
                   </Link>
@@ -134,7 +134,7 @@ export default function FlowerDropdown() {
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="font-rosarivo lg:text-xs xl:text-sm text-muted-foreground hover:text-[#a3b18a]"
+                    className="font-rosarivo lg:text-xs xl:text-sm text-muted-foreground hover:text-[#a07676]"
                   >
                     {item.name}
                   </Link>
@@ -151,7 +151,7 @@ export default function FlowerDropdown() {
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="font-rosarivo lg:text-xs xl:text-sm text-muted-foreground hover:text-[#a3b18a]"
+                    className="font-rosarivo lg:text-xs xl:text-sm text-muted-foreground hover:text-[#a07676]"
                   >
                     {item.name}
                   </Link>

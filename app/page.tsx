@@ -7,15 +7,15 @@ export default function Home() {
   return (
     <div className="font-sans ">
       <Hero />
-      <div className="flex items-center justify-center gap-2 bg-[#e7e6d0] ">
-        <Truck className="font-normal text-sm" />
-        <p className="font-libre font-medium uppercase text-sm text-[#51514a] p-3">
+      <div className="flex items-center justify-center gap-2 bg-neutral-100 ">
+        <Truck className="font-normal text-sm text-[#ab9483]" />
+        <p className="font-cormorant font-semibold uppercase text-sm text-[#ab9483] p-3">
           Free and same day delivery
         </p>
       </div>
       <CompanyLogos />
       <BestSellers />
-      <p className="font-libre text-lg mt-2 text-muted-foreground">
+      {/* <p className="font-libre text-lg mt-2 text-muted-foreground">
         Elegant and timeless pieces made with passion.
       </p>
 
@@ -31,7 +31,7 @@ export default function Home() {
         <p className="font-rosarivo text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
           Each piece tells a story of elegance, heritage, and timeless grace.
         </p>
-      </section>
+      </section> */}
     </div>
   );
 }

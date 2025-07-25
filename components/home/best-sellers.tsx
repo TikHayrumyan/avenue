@@ -43,7 +43,7 @@ export default function BestSellers() {
               beautiful bouquet today.
             </p>
             <Button
-              className="bg-[#a3b18a] uppercase cursor-pointer text-[#f2f2f2] hover:bg-[#a3b18a]/90 font-cormorant text-lg px-8 py-3 rounded-xs shadow-lg transition-transform duration-200 transform focus:outline-none focus:ring-2 focus:ring-[#a3b18a] focus:ring-offset-2"
+              className="bg-[#a07676] uppercase cursor-pointer text-[#f2f2f2] hover:bg-[#ab8181] font-cormorant text-lg px-8 py-3 rounded-xs shadow-lg transition-transform duration-200 transform focus:outline-none focus:ring-2 focus:ring-[#a07676] focus:ring-offset-2"
               size="lg"
               asChild
             >
@@ -82,7 +82,7 @@ const BestsellerCard = ({
   return (
     <div className="relative flex flex-col bg-white  overflow-hidden  transition-shadow duration-200 w-sm">
       {/* Product Image */}
-      <div className="relative aspect-[3/4] bg-gray-50">
+      <div className="relative aspect-[3/4] bg-neutral-100">
         <Image
           src={product.image}
           alt={product.name}

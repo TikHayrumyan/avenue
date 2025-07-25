@@ -47,7 +47,7 @@ export default function MobileNavigation() {
                   {link.hasDropdown ? (
                     <div>
                       <button
-                        className="w-full flex justify-between items-center py-3 px-2 font-cormorant text-lg font-bold text-[#344e41] hover:text-[#a3b18a] uppercase focus:outline-none"
+                        className="w-full flex justify-between items-center py-3 px-2 font-cormorant text-lg font-bold text-[#344e41] hover:text-[#a07676] uppercase focus:outline-none"
                         onClick={() => handleAccordion(link.dropdownType)}
                         aria-expanded={openAccordion === link.dropdownType}
                         aria-controls={`mobile-accordion-${link.dropdownType}`}
@@ -75,7 +75,7 @@ export default function MobileNavigation() {
                   ) : (
                     <Link
                       href={link.href}
-                      className="block py-3 px-2 font-cormorant text-lg font-bold text-[#344e41] hover:text-[#a3b18a] uppercase"
+                      className="block py-3 px-2 font-cormorant text-lg font-bold text-[#344e41] hover:text-[#a07676] uppercase"
                       onClick={() => setMenuOpen(false)}
                     >
                       {link.name}
@@ -89,7 +89,7 @@ export default function MobileNavigation() {
             <LanguageDropdownMobile />
             <Link
               href="/sign-in"
-              className="block font-cormorant text-lg font-bold text-[#344e41] hover:text-[#a3b18a] uppercase"
+              className="block font-cormorant text-lg font-bold text-[#344e41] hover:text-[#a07676] uppercase"
               onClick={() => setMenuOpen(false)}
             >
               Sign In

@@ -62,16 +62,16 @@ export default function Navigation() {
           >
             <Link
               href={link.href}
-              className={`relative font-cormorant lg:text-sm xl:text-lg font-bold text-[#344e41] hover:text-[#a3b18a]  uppercase  group px-1`}
+              className={`relative font-cormorant lg:text-sm xl:text-lg font-bold text-[#344e41] hover:text-[#a07676]  uppercase  group px-1`}
             >
               {link.name}
 
               <span
-                className={`absolute left-0 right-0 -bottom-1 h-[1px] rounded bg-[#344e41] transition-transform duration-300 origin-left
+                className={`absolute left-0 right-0 -bottom-1 h-[1px] rounded bg-[#a07676] transition-transform duration-300 origin-left
                     ${
                       openDropdown === link.dropdownType
-                        ? "scale-x-100"
-                        : "scale-x-0"
+                        ? "scale-x-100 "
+                        : "scale-x-0 "
                     }
                     group-hover:scale-x-100
                   `}

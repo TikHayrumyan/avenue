@@ -1,23 +1,23 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { Globe, ChevronDown } from "lucide-react" // Importing Lucide React icons
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Globe, ChevronDown } from "lucide-react"; // Importing Lucide React icons
 
 const languages = [
   { code: "EN", label: "English" },
   { code: "HY", label: "Հայերեն" },
   { code: "RU", label: "Русский" },
-]
+];
 
 export default function LanguageDropdown() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [selectedLanguage, setSelectedLanguage] = useState(languages[0]) // Default to English
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState(languages[0]); // Default to English
 
   const handleSelectLanguage = (lang: { code: string; label: string }) => {
-    setSelectedLanguage(lang)
-    setIsOpen(false) // Close dropdown after selection
-  }
+    setSelectedLanguage(lang);
+    setIsOpen(false); // Close dropdown after selection
+  };
 
   return (
     <div
@@ -27,14 +27,18 @@ export default function LanguageDropdown() {
     >
       {/* Dropdown Trigger Button */}
       <button
-        className="relative flex  font-cormorant  items-center gap-2 px-4 py-2 border-0 shadow-none lg:text-sm xl:text-lg font-bold text-[#344e41] hover:text-[#a3b18a] focus:outline-none focus:ring-2 focus:ring-[#a3b18a] transition-colors duration-300 cursor-pointer uppercase group"
+        className="relative flex  font-cormorant  items-center gap-2 px-4 py-2 border-0 shadow-none lg:text-sm xl:text-lg font-bold text-[#344e41] hover:text-[#a07676] focus:outline-none focus:ring-2 focus:ring-[#a07676] transition-colors duration-300 cursor-pointer uppercase group"
         aria-haspopup="true"
         aria-expanded={isOpen}
         onClick={() => setIsOpen(!isOpen)} // Allows click to toggle on smaller screens/touch
       >
         <Globe className="w-4 h-4" /> {/* Lucide Globe icon */}
         <span>{selectedLanguage.code}</span>
-        <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isOpen ? "rotate-180" : "rotate-0"}`} />{" "}
+        <ChevronDown
+          className={`w-4 h-4 transition-transform duration-200 ${
+            isOpen ? "rotate-180" : "rotate-0"
+          }`}
+        />{" "}
         {/* Lucide ChevronDown icon */}
         {/* <span
           className={`absolute left-0 right-0 -bottom-1 h-[1px] rounded bg-[#344e41] transition-transform duration-300 origin-left
@@ -61,7 +65,7 @@ export default function LanguageDropdown() {
                 <li key={lang.code}>
                   <button
                     onClick={() => handleSelectLanguage(lang)}
-                    className={`relative w-full text-left px-4 py-2 text-black lg:text-sm  hover:bg-gray-100 hover:text-[#a3b18a] transition-colors duration-200 font-semibold cursor-pointer font-cormorant uppercase group`}
+                    className={`relative w-full text-left px-4 py-2 text-black lg:text-sm  hover:bg-gray-100 hover:text-[#a07676] transition-colors duration-200 font-semibold cursor-pointer font-cormorant uppercase group`}
                   >
                     {lang.label}
                     <span
@@ -76,5 +80,5 @@ export default function LanguageDropdown() {
         )}
       </AnimatePresence>
     </div>
-  )
+  );
 }

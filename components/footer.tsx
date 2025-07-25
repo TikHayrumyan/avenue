@@ -148,11 +148,12 @@ export const Footer = ({
                     placeholder="Enter your email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="flex-1 min-w-[200px] border-1 border-[#344e41] bg-transparent placeholder:text-[#a3b18a] focus:ring-0  focus-visible:ring-0 rounded-sm px-4 py-2 text-[#344e41]"
+                    className="flex-1 min-w-[200px] border-1 border-[#a07676] bg-transparent placeholder:text-[#a07676] focus:ring-0  focus-visible:ring-0 rounded-sm px-4 py-2 text-[#344e41]"
                   />
                   <Button
                     type="submit"
-                    className="bg-[#344e41] text-[#f2f2f2] hover:bg-[#344e41]/90 cursor-pointer rounded-sm border-2 border-[#344e41] px-6 py-2 transition-colors duration-200"
+                    className="bg-[#a07676] uppercase cursor-pointer text-[#f2f2f2] hover:bg-[#ab8181] font-cormorant text-lg px-8 py-3 rounded-xs shadow-lg transition-transform duration-200 transform focus:outline-none focus:ring-2 focus:ring-[#a07676] focus:ring-offset-2"
+                    
                   >
                     Subscribe
                   </Button>
@@ -186,7 +187,7 @@ export const Footer = ({
                   {section.links.map((link, linkIdx) => (
                     <li
                       key={linkIdx}
-                      className="font-rosarivo text-sm text-muted-foreground hover:text-[#a3b18a]"
+                      className="font-rosarivo text-sm text-muted-foreground hover:text-[#a07676]"
                     >
                       <Link href={link.href}>{link.name}</Link>
                     </li>
@@ -197,14 +198,14 @@ export const Footer = ({
           </div>
         </div>
         <div className="mt-8 flex flex-col justify-between gap-4 border-t py-8 border-[#344e41] text-xs font-medium text-muted-foreground md:flex-row md:items-center md:text-left">
-          <p className="order-2 lg:order-1 font-rosarivo text-xs text-muted-foreground hover:text-[#a3b18a]">
+          <p className="order-2 lg:order-1 font-rosarivo text-xs text-muted-foreground hover:text-[#a07676]">
             {copyright}
           </p>
           <ul className="order-1 flex flex-col gap-2 md:order-2 md:flex-row">
             {legalLinks.map((link, idx) => (
               <li
                 key={idx}
-                className="font-rosarivo text-xs text-muted-foreground hover:text-[#a3b18a]"
+                className="font-rosarivo text-xs text-muted-foreground hover:text-[#a07676]"
               >
                 <Link href={link.href}> {link.name}</Link>
               </li>

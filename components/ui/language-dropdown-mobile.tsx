@@ -24,7 +24,7 @@ export default function LanguageDropdownMobile() {
       {/* Mobile: Inline Accordion */}
       <div className="block lg:hidden w-full">
         <button
-          className="flex w-full font-cormorant items-center gap-2 px-4 py-3 border-0 shadow-none text-base font-bold text-[#344e41] hover:text-[#a3b18a] focus:outline-none focus:ring-2 focus:ring-[#a3b18a] transition-colors duration-300 cursor-pointer uppercase group justify-between bg-white rounded-md"
+          className="flex w-full font-cormorant items-center gap-2 px-4 py-3 border-0 shadow-none text-base font-bold text-[#344e41] hover:text-[#a07676] focus:outline-none focus:ring-2 focus:ring-[#a07676] transition-colors duration-300 cursor-pointer uppercase group justify-between bg-white rounded-md"
           aria-haspopup="true"
           aria-expanded={isOpen}
           onClick={() => setIsOpen(!isOpen)}
@@ -55,8 +55,8 @@ export default function LanguageDropdownMobile() {
                     className={`w-full text-left px-6 py-3 text-base font-cormorant uppercase font-semibold transition-colors duration-200 cursor-pointer flex items-center gap-2
                       ${
                         selectedLanguage.code === lang.code
-                          ? "bg-[#a3b18a]/20 text-[#344e41]"
-                          : "hover:bg-gray-100 hover:text-[#a3b18a] text-[#344e41]"
+                          ? "bg-[#a07676]/20 text-[#344e41]"
+                          : "hover:bg-gray-100 hover:text-[#a07676] text-[#344e41]"
                       }`}
                   >
                     {lang.label}
@@ -73,7 +73,7 @@ export default function LanguageDropdownMobile() {
       {/* Desktop: Dropdown Overlay */}
       <div className="hidden lg:flex relative h-full items-center">
         <button
-          className="relative flex font-cormorant items-center gap-2 px-4 py-2 border-0 shadow-none lg:text-sm xl:text-lg font-bold text-[#344e41] hover:text-[#a3b18a] focus:outline-none focus:ring-2 focus:ring-[#a3b18a] transition-colors duration-300 cursor-pointer uppercase group"
+          className="relative flex font-cormorant items-center gap-2 px-4 py-2 border-0 shadow-none lg:text-sm xl:text-lg font-bold text-[#344e41] hover:text-[#a07676] focus:outline-none focus:ring-2 focus:ring-[#a07676] transition-colors duration-300 cursor-pointer uppercase group"
           aria-haspopup="true"
           aria-expanded={isOpen}
           onClick={() => setIsOpen(!isOpen)}
@@ -101,10 +101,10 @@ export default function LanguageDropdownMobile() {
                   <li key={lang.code}>
                     <button
                       onClick={() => handleSelectLanguage(lang)}
-                      className={`relative w-full text-left px-4 py-2 text-black lg:text-sm hover:bg-gray-100 hover:text-[#a3b18a] transition-colors duration-200 font-semibold cursor-pointer font-cormorant uppercase group
+                      className={`relative w-full text-left px-4 py-2 text-black lg:text-sm hover:bg-gray-100 hover:text-[#a07676] transition-colors duration-200 font-semibold cursor-pointer font-cormorant uppercase group
                         ${
                           selectedLanguage.code === lang.code
-                            ? "bg-[#a3b18a]/20 text-[#344e41]"
+                            ? "bg-[#a07676]/20 text-[#344e41]"
                             : ""
                         }`}
                     >

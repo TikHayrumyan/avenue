@@ -7,7 +7,7 @@ import { motion } from "motion/react";
 export default function Hero() {
   return (
     <section
-      className="flex w-full  relative bg-cover bg-center bg-no-repeat items-end justify-start px-6 sm:px-6 md:px-6 lg:px-20 xl:px-10 2xl:px-20  py-40 xl:py-46 "
+      className="flex w-full  relative bg-cover bg-center bg-no-repeat items-end justify-start px-6 sm:px-6 md:px-6 lg:px-20 xl:px-10 2xl:px-20  h-[90vh] "
       style={{
         backgroundImage: "url('/home/62635.jpg')",
       }}
@@ -24,7 +24,7 @@ export default function Hero() {
         </h1>
 
         <span
-          className="block w-16 h-1 bg-[#a3b18a] rounded-full mb-4 mx-auto sm:mx-0"
+          className="block w-16 h-1 bg-[#a07676] rounded-full mb-4 mx-auto sm:mx-0"
           aria-hidden="true"
         />
         <p className="font-cormorant text-xl max-w-sm md:text-2xl font-medium text-white text-center sm:text-left lg:max-w-lg mb-8 drop-shadow">
@@ -33,12 +33,13 @@ export default function Hero() {
         </p>
         <div className="flex  flex-col sm:flex-row gap-4 items-center sm:items-center justify-center sm:justify-start">
           <Button
-            className="bg-[#a3b18a] uppercase cursor-pointer text-[#f2f2f2] hover:bg-[#a3b18a]/90 font-cormorant text-lg px-8 py-3 rounded-xs shadow-lg transition-transform duration-200 transform focus:outline-none focus:ring-2 focus:ring-[#a3b18a] focus:ring-offset-2"
+            className="bg-[#a07676] uppercase cursor-pointer text-[#f2f2f2] hover:bg-[#ab8181] font-cormorant text-lg px-8 py-3 rounded-xs shadow-lg transition-transform duration-200 transform focus:outline-none focus:ring-2 focus:ring-[#a07676] focus:ring-offset-2"
             size="lg"
+            asChild
           >
-            Shop now
+            <Link href="#">Shop now</Link>
           </Button>
-          <Link
+          {/* <Link
             href="#gallery"
             className="relative group font-cormorant text-base md:text-2xl text-[#f2f2f2]  transition-colors duration-200"
             aria-label="View Gallery"
@@ -48,7 +49,7 @@ export default function Hero() {
               className="absolute left-0 right-0 -bottom-1 h-[1px] rounded bg-white transition-transform duration-300 origin-left scale-x-0 group-hover:scale-x-100"
               aria-hidden="true"
             />
-          </Link>
+          </Link> */}
         </div>
       </div>
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10">

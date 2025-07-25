@@ -6,7 +6,7 @@ import MobileNavigation from "./navigation/MobileNavigation";
 
 export default function Header() {
   return (
-    <header className="sticky z-50 top-0 px-6 sm:px-6 md:px-6 lg:px-20 xl:px-10 2xl:px-20 h-20  items-center justify-center flex bg-white">
+    <header className="sticky z-50 top-0 px-6 sm:px-6 md:px-6 lg:px-20 xl:px-10 2xl:px-20 h-16 lg:h-20  items-center justify-center flex bg-white">
       <section className="w-full flex items-center justify-between h-full">
         <Image
           alt="logo"

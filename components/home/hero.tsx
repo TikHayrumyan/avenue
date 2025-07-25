@@ -5,9 +5,9 @@ import { FaChevronDown } from "react-icons/fa";
 export default function Hero() {
   return (
     <section
-      className="flex w-full h-[80vh] relative bg-cover bg-center bg-no-repeat items-end justify-start px-6 sm:px-6 md:px-6 lg:px-20 xl:px-10 2xl:px-20"
+      className="flex w-full  relative bg-cover bg-center bg-no-repeat items-end justify-start px-6 sm:px-6 md:px-6 lg:px-20 xl:px-10 2xl:px-20  py-40 xl:py-46 "
       style={{
-        backgroundImage: "url('/home/3.jpg')",
+        backgroundImage: "url('/home/62635.jpg')",
       }}
     >
       {/* Enhanced Gradient Overlay with vignette */}
@@ -18,23 +18,16 @@ export default function Hero() {
       />
       <div className="relative z-10 flex flex-col items-center sm:items-start justify-center sm:justify-center w-full h-full  pb-10 sm:pb-16 md:pb-20">
         <h1 className="font-cormorant text-4xl md:text-6xl font-medium text-[#f2f2f2] text-center sm:text-left drop-shadow-lg mb-2">
-          Welcome to Avenue de Fleurs
+          Avenue de Fleurs
         </h1>
 
-        {/* Vintage accent divider */}
         <span
           className="block w-16 h-1 bg-[#a3b18a] rounded-full mb-4 mx-auto sm:mx-0"
           aria-hidden="true"
         />
-        <p className="font-rosarivo text-lg md:text-2xl text-white text-center sm:text-left max-w-2xl mb-8 drop-shadow">
-          Elevate your moments with our curated selection of flowers,
-          accessories, and bespoke event services.{" "}
-          <span className="text-[#a3b18a] font-semibold">Vintage charm</span>{" "}
-          meets{" "}
-          <span className="text-[#a3b18a] font-semibold">
-            modern minimalism
-          </span>
-          .
+        <p className="font-rosarivo text-lg md:text-xl text-white text-center sm:text-left max-w-lg mb-8 drop-shadow">
+          Beautiful bouquets and unique decor to make every moment
+          unforgettable.
         </p>
         <div className="flex  flex-col sm:flex-row gap-4 items-center sm:items-center justify-center sm:justify-start">
           <Button

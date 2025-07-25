@@ -1,10 +1,18 @@
+import { CompanyLogos } from "@/components/home/company-logos";
 import Hero from "@/components/home/hero";
+import { Truck } from "lucide-react";
 
 export default function Home() {
   return (
     <div className="font-sans ">
       <Hero />
-
+      <div className="flex items-center justify-center gap-2 bg-[#f2f2f2] ">
+        <Truck className="font-normal text-sm" />
+        <p className="font-libre text-md text-muted-foreground p-3">
+          Free and same day delivery options available
+        </p>
+      </div>
+      <CompanyLogos />
       <p className="font-libre text-lg mt-2 text-muted-foreground">
         Elegant and timeless pieces made with passion.
       </p>

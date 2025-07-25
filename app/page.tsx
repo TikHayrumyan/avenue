@@ -1,6 +1,7 @@
 import { CompanyLogos } from "@/components/home/company-logos";
 import Hero from "@/components/home/hero";
 import { Truck } from "lucide-react";
+import BestSellers from "@/components/home/best-sellers";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
         </p>
       </div>
       <CompanyLogos />
+      <BestSellers />
       <p className="font-libre text-lg mt-2 text-muted-foreground">
         Elegant and timeless pieces made with passion.
       </p>

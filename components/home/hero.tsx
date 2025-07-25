@@ -33,7 +33,7 @@ export default function Hero() {
         </p>
         <div className="flex  flex-col sm:flex-row gap-4 items-center sm:items-center justify-center sm:justify-start">
           <Button
-            className="bg-[#a3b18a] uppercase cursor-pointer text-[#f2f2f2] hover:bg-[#a3b18a]/90 font-cormorant text-lg px-8 py-3 rounded-md shadow-lg transition-transform duration-200 transform focus:outline-none focus:ring-2 focus:ring-[#a3b18a] focus:ring-offset-2"
+            className="bg-[#a3b18a] uppercase cursor-pointer text-[#f2f2f2] hover:bg-[#a3b18a]/90 font-cormorant text-lg px-8 py-3 rounded-xs shadow-lg transition-transform duration-200 transform focus:outline-none focus:ring-2 focus:ring-[#a3b18a] focus:ring-offset-2"
             size="lg"
           >
             Shop now

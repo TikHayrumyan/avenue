@@ -31,7 +31,7 @@ export default function BestSellers() {
   ));
 
   return (
-    <section className="container mx-auto py-8">
+    <section className="px-6 sm:px-6 md:px-6 lg:px-20 xl:px-10 2xl:px-20 py-8">
       <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-12">
         <div className="lg:w-1/3 mb-8 lg:mb-0 flex flex-col justify-between h-full">
           <h2 className="font-cormorant text-4xl font-semibold tracking-wide  text-gray-900 mb-4">

@@ -1,14 +1,33 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { Carousel } from "../ui/card-carousel";
 import { Button } from "../ui/button";
 import Image from "next/image";
-import { TbShoppingBag } from "react-icons/tb";
+import { TbShoppingBag, TbShoppingBagCheck } from "react-icons/tb";
 import Link from "next/link";
 export default function BestSellers() {
+  const [cartItems, setCartItems] = useState<Set<string>>(new Set());
+
+  const handleAddToCart = (productId: string) => {
+    setCartItems((prev) => {
+      const newCart = new Set(prev);
+      if (newCart.has(productId)) {
+        newCart.delete(productId);
+      } else {
+        newCart.add(productId);
+      }
+      return newCart;
+    });
+  };
+
   const bestsellerCards = bestsellerData.map((product) => (
-    <BestsellerCard key={product.id} product={product} />
+    <BestsellerCard
+      key={product.id}
+      product={product}
+      isInCart={cartItems.has(product.id)}
+      onAddToCart={() => handleAddToCart(product.id)}
+    />
   ));
 
   return (
@@ -51,7 +70,15 @@ interface BestsellerProduct {
   isBestseller: boolean;
 }
 
-const BestsellerCard = ({ product }: { product: BestsellerProduct }) => {
+const BestsellerCard = ({
+  product,
+  isInCart,
+  onAddToCart,
+}: {
+  product: BestsellerProduct;
+  isInCart: boolean;
+  onAddToCart: () => void;
+}) => {
   return (
     <div className="relative flex flex-col bg-white  overflow-hidden  transition-shadow duration-200 w-sm">
       {/* Product Image */}
@@ -64,8 +91,15 @@ const BestsellerCard = ({ product }: { product: BestsellerProduct }) => {
         />
 
         {/* Heart Icon */}
-        <button className="absolute top-3 right-3 w-8 h-8 bg-white/80 hover:bg-white rounded-full flex items-center justify-center transition-colors duration-200">
-          <TbShoppingBag className="w-4 h-4 text-gray-600" />
+        <button
+          className="absolute top-3 cursor-pointer right-3 w-10 h-10 bg-white/80 hover:bg-white rounded-full flex items-center justify-center transition-colors duration-200"
+          onClick={onAddToCart}
+        >
+          {isInCart ? (
+            <TbShoppingBagCheck className="w-6 h-6 text-gray-600" />
+          ) : (
+            <TbShoppingBag className="w-6 h-6 text-gray-600" />
+          )}
         </button>
       </div>
 
@@ -87,28 +121,28 @@ const bestsellerData: BestsellerProduct[] = [
     id: "alma",
     name: "Alma",
     image: "/best-beseller/1.png",
-    price: "$150.00",
+    price: "From $150.00",
     isBestseller: true,
   },
   {
     id: "helios",
     name: "Helios",
     image: "/best-beseller/2.png",
-    price: "from $100.00",
+    price: "$100.00",
     isBestseller: true,
   },
   {
     id: "felice",
     name: "Felice",
     image: "/best-beseller/3.png",
-    price: "from $86.00",
+    price: "$86.00",
     isBestseller: true,
   },
   {
     id: "serena",
     name: "Serena",
     image: "/best-beseller/4.png",
-    price: "$120.00",
+    price: "From $120.00",
     isBestseller: true,
   },
   {

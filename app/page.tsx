@@ -6,10 +6,10 @@ export default function Home() {
   return (
     <div className="font-sans ">
       <Hero />
-      <div className="flex items-center justify-center gap-2 bg-[#f2f2f2] ">
+      <div className="flex items-center justify-center gap-2 bg-[#e7e6d0] ">
         <Truck className="font-normal text-sm" />
-        <p className="font-libre text-md text-muted-foreground p-3">
-          Free and same day delivery options available
+        <p className="font-libre font-medium uppercase text-sm text-[#51514a] p-3">
+          Free and same day delivery
         </p>
       </div>
       <CompanyLogos />

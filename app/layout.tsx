@@ -11,7 +11,7 @@ import "./globals.css";
 import Header from "@/components/header";
 import { Footer } from "@/components/footer";
 
-// === Font Imports with CSS Variables ===
+
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
   subsets: ["latin"],

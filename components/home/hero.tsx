@@ -27,7 +27,7 @@ export default function Hero() {
           className="block w-16 h-1 bg-[#a3b18a] rounded-full mb-4 mx-auto sm:mx-0"
           aria-hidden="true"
         />
-        <p className="font-rosarivo text-lg md:text-xl text-white text-center sm:text-left max-w-lg mb-8 drop-shadow">
+        <p className="font-cormorant text-xl max-w-sm md:text-2xl font-medium text-white text-center sm:text-left lg:max-w-lg mb-8 drop-shadow">
           Beautiful bouquets and unique decor to make every moment
           unforgettable.
         </p>
@@ -40,7 +40,7 @@ export default function Hero() {
           </Button>
           <Link
             href="#gallery"
-            className="relative group font-rosarivo text-base md:text-lg text-[#f2f2f2]  transition-colors duration-200"
+            className="relative group font-cormorant text-base md:text-2xl text-[#f2f2f2]  transition-colors duration-200"
             aria-label="View Gallery"
           >
             View Gallery

@@ -19,8 +19,8 @@ export default function BestSellers() {
             OUR BESTSELLERS
           </h2>
           <div>
-            <p className="text-gray-600 mb-6 leading-relaxed">
-              Our selection of best selling bouquets by Ode à la Rose. Send a
+            <p className="text-gray-600 mb-6  font-medium text-xl font-cormorant tracking-wide max-w-md">
+              Our selection of best selling bouquets by Avenue de Fleurs. Send a
               beautiful bouquet today.
             </p>
             <Button
